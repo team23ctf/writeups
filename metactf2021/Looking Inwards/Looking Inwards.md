@@ -39,13 +39,13 @@ Output:
 
 ### Step 2 - Find Other Endpoints on GraphQL API
 
-After a bit of research, we learned we can use a technique called `introspection` on GraphQL APIs to find other endpoints. Using the following [tutorial](https://blog.yeswehack.com/yeswerhackers/how-exploit-graphql-endpoint-bug-bounty/) from `Yes We Hack`, they included the following request we can use:
+After a bit of research, we learned we can use a technique called `introspection` on GraphQL APIs to find other endpoints. Using the following [tutorial](https://blog.yeswehack.com/yeswerhackers/how-exploit-graphql-endpoint-bug-bounty/) from `Yes We Hack`, they included the following request:
 
 ```
 {__schema{queryType{name}mutationType{name}subscriptionType{name}types{...FullType}directives{name description locations args{...InputValue}}}}fragment FullType on __Type{kind name description fields(includeDeprecated:true){name description args{...InputValue}type{...TypeRef}isDeprecated deprecationReason}inputFields{...InputValue}interfaces{...TypeRef}enumValues(includeDeprecated:true){name description isDeprecated deprecationReason}possibleTypes{...TypeRef}}fragment InputValue on __InputValue{name description type{...TypeRef}defaultValue}fragment TypeRef on __Type{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name}}}}}}}}
 ```
 
-We chucked this payload into our script from the previous step and found the following in the really long output:
+After putting this request into our script from the previous step, we found the following in the output:
 
 ```JSON
 {
@@ -84,12 +84,11 @@ We chucked this payload into our script from the previous step and found the fol
 
 }
 ```
-
 This shows that there is an endpoint called `super_super_secret_flag_dispenser` that takes in a boolean called `authorized`.
 
 ## Step 3 - Retrieving the Flag
 
-Knowing that there is an endpoint called `super_super_secret_flag_dispenser` that takes in a boolean called `authorized`, we crafted the following query:
+Using the information from the previous step, we crafted the following query:
 
 ```
 query {
