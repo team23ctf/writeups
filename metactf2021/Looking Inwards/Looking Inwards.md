@@ -124,4 +124,4 @@ print(r.text)
 </details>
 
 ## Learning Takeaways
-We can use introspection in order to discover endpoints of a GraphQL API. GraphQL APIs can disable introspection and it is recommended practice for production. Well-made documentation is preferred. Python is a powerful tool for completing GraphQL challenges in the future.
+We can use introspection in order to discover endpoints of a GraphQL API. GraphQL APIs can disable introspection and it is a recommended practice for production. Well-made documentation is preferred. Python is a powerful tool for completing GraphQL challenges in the future.
