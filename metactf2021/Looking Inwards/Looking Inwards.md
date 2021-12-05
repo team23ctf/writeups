@@ -34,13 +34,12 @@ print(r.text)
 Output:
 
 ```JSON
-200
 {"data":{"echo":"You said: message_here"}}
 ```
 
 ### Step 2 - Find Other Endpoints on GraphQL API
 
-After a bit of research, we learned we can use a technique called `introspection` on GraphQL APIs to find other endpoints. Using the following [resource](https://blog.yeswehack.com/yeswerhackers/how-exploit-graphql-endpoint-bug-bounty/) from `Yes We Hack`, it included the following payload:
+After a bit of research, we learned we can use a technique called `introspection` on GraphQL APIs to find other endpoints. Using the following [tutorial](https://blog.yeswehack.com/yeswerhackers/how-exploit-graphql-endpoint-bug-bounty/) from `Yes We Hack`, they included the following request we can use:
 
 ```
 {__schema{queryType{name}mutationType{name}subscriptionType{name}types{...FullType}directives{name description locations args{...InputValue}}}}fragment FullType on __Type{kind name description fields(includeDeprecated:true){name description args{...InputValue}type{...TypeRef}isDeprecated deprecationReason}inputFields{...InputValue}interfaces{...TypeRef}enumValues(includeDeprecated:true){name description isDeprecated deprecationReason}possibleTypes{...TypeRef}}fragment InputValue on __InputValue{name description type{...TypeRef}defaultValue}fragment TypeRef on __Type{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name}}}}}}}}
