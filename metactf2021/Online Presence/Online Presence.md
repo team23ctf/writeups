@@ -91,3 +91,5 @@ Therefore our flag is
     MetaCTF{dtdnumberone_r4rant_hmqpa52}
  </details>
 
+## Learning Takeaways
+We learned how to use the Reddit PRAW API for crawling comments and subreddits, and how to filter that data. Correlative logic skills were improved when thinking about where he would be posting.
