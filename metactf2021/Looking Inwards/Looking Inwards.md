@@ -122,3 +122,6 @@ print(r.text)
     <summary> Flag Spoiler </summary>
     MetaCTF{look_deep_and_who_knows_what_you_might_find}
 </details>
+
+## Learning Takeaways
+We can use introspection in order to discover endpoints of a GraphQL API. GraphQL APIs can disable introspection and it is recommended practice for production. Well-made documentation is preferred. Python is a powerful tool for completing GraphQL challenges in the future.
