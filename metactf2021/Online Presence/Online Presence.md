@@ -66,7 +66,7 @@ This is basically all of the code required, we just need to try different combin
 ### Step 4 - Some Hits!
 When we were filtering between /r/bodybuilding, /r/fitness, and other health-related subreddits, there were tons of users in the list to go through. Who would've thought people who comment in one subreddit comment in another related one?
 We decided it needed to be filtered down to the metro area, since we were getting very few users who posted in a city and a health subreddit.
-Eventually, after intersecting /r/fitness and /r/chicago, we had only two users to look at:
+Eventually, after intersecting /r/fitness and /r/Indiana, we had only two users to look at:
 >{Redditor(name='Dptwin'), None, Redditor(name='dtdnumberone')}
 
 Dptwin questionable content, but dtdnumberone was enticing. It's reddit birthday was Nov 30, 5 days before this challenge. It had very few posts, and all were within fitness, indiana, chicago, chicagosuburbs, and related subreddits.
