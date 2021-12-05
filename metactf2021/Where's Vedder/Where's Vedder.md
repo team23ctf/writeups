@@ -5,7 +5,7 @@
 The answer should represent the MD5 hash of the address of the location. For example, if the address is: "150 Greenwich St, New York, NY 10006" then the flag will be e8244cb2f4d53117e9797af909123e86. Make sure to have the address format the same as above.
 [This video](https://www.youtube.com/watch?v=RoqWbpZUOSo) is helpful for thinking about the right way.
 ### Included Files:
-> [location.jpg](https://github.com/zylideum/writeups/blob/main/metactf2021/Where's%20Vedder%3F/location.jpg)
+> [location.jpg](https://github.com/team23ctf/writeups/blob/main/metactf2021/Where's%20Vedder/location.jpg)
 
 ### Step 1 - Observations:
 This challenge does not have any gimmicks. We started by trying to identify metadata for information on location or anything we could go off of. Unfortunately, it was scrubbed and there is truly nothing more than this image.
