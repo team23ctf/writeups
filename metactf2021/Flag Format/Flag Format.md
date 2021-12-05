@@ -9,7 +9,7 @@ This challenge is just verfying you understand how to input the flag properly. I
 <details>
   <summary> Flag Spoiler </summary>
   MetaCTF{string_separated_with_und3rscores}
-</details
+</details>
 
 ## Learning Takeaways
-  We learned the flag format in this challenge.
+We learned the flag format in this challenge.
