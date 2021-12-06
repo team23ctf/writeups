@@ -1,6 +1,6 @@
 # MetaCTF 2021
 
-## Easy as it (TCP) Streams (50pts)
+## Easy as it (TCP) Streams (250pts)
 
 ### Description:
 
