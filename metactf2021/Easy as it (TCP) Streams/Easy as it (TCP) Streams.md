@@ -8,29 +8,29 @@
 
 ### Included Files:
 
-> \[easy_as_it_streams.pcapng\]\(url - upload in github chall folder\)
+> [easy_as_it_streams.pcapng](https://github.com/team23ctf/writeups/blob/main/metactf2021/Easy%20as%20it%20(TCP)%20Streams/easy_as_it_streams.pcapng)
 
 ### Step 1 - Locating the Encrypted Message
 
-Upon opening the provided PCAP file, using context clues from the title, right clicked on the first TCP packet and went `Follow > TCP Stream` as shown below.
+Upon opening the provided PCAP file, using context clues from the title, we right clicked on the first TCP packet and went `Follow > TCP Stream` as shown below.
 
-Part 1.png
+![Part 1](https://user-images.githubusercontent.com/30860555/144775833-71c6a18d-b2bb-4689-8a96-fed9411f3423.png)
 
 After doing so, we find the encrypted PGP message below:
 
-Part 2.png
+![Part 2](https://user-images.githubusercontent.com/30860555/144775848-c6cd97da-f698-4367-a641-21791434dc92.png)
 
 Now that we have the encrypted PGP message, we need to find a key to decrypt this.
 
-### Step 2 - Locating Key Information (Pun Intended):
+### Step 2 - Locating Key Information (Pun Intended)
 
 Heading back into Wireshark, I incremented the TCP stream to `1` to see what other information I could find.
 
-Part 3.png
+![Part 3](https://user-images.githubusercontent.com/30860555/144775852-b1928a5d-1bd6-48de-899d-fab80b7d385a.png)
 
 After right-clicking on the first packet and following this new TCP stream, I found the private PGP key!
 
-Part 4.png
+![Part 4](https://user-images.githubusercontent.com/30860555/144775860-a40fb8db-007f-4244-84a8-df29c9730ac1.png)
 
 Unfortunately, this private PGP key can't be used on its own. It is password protected so we still needed to locate some sort of password.
 
@@ -38,31 +38,28 @@ Unfortunately, this private PGP key can't be used on its own. It is password pro
 
 Heading back into Wireshark, I incremented the TCP stream one more time to `2`, right-clicked on the first packet, and followed a new TCP stream again. This time, I found a telnet session, though it is hard to read as is.
 
-Part 5.png
+![Part 5](https://user-images.githubusercontent.com/30860555/144775868-2648ce49-c91c-4cb1-abba-775cd21447c1.png)
 
 In order to make above more readable, at the bottom of the window, I switched from the `Entire Conversation` to `10.0.2.6:23 -> 10.0.2.9:59704 (1213 bytes)` to read the blue text alone.
 
-Part 6.png
+![Part 6](https://user-images.githubusercontent.com/30860555/144775870-ef855e5f-ae66-4d61-ae69-4424fb61f3a5.png)
 
-Above, when examined closer, we can see the command that was used to create the private PGP key.
+When examined closer, we can see the command that was used to create the private PGP key. In the command, we see the passphrase `farnha`. This is all the information we need to crack the PGP message!
 
-Part 7.png
-
-In the command, we see the passphrase `farnha`. This is all the information we need to crack the PGP message!
+![Part 7](https://user-images.githubusercontent.com/30860555/144775875-8b7a3d3e-4ce0-4d3c-a3fe-67fb53aa7db7.png)
 
 ## Step 4 - Cracking the PGP Message
 
 In order to crack the PGP message, we booted up [CyberChef](https://gchq.github.io/CyberChef/). We dragged the `PGP Decrypt` module into the `Recipe` section and filled in the private PGP key and private password. We put the PGP message in the `Input` section in the top right.
 
-Part 8.png
-Part 9.png
+![Part 8](https://user-images.githubusercontent.com/30860555/144775883-1134469e-c6b3-4d44-b88c-227a583e23a8.png)
+![Part 9](https://user-images.githubusercontent.com/30860555/144775885-ec4d9243-c29e-4616-b2e0-4e9458a5cce7.png)
 
-As you can see above, the flag isn't quite usable this way. To fix this, we dragged in the `Magic` module to the bottom of the recipe.
+Unfortunately, the flag isn't quite usable as of yet. To fix this, we dragged in the `Magic` module to the bottom of the recipe. 
 
-<details>
-  <summary> Fixed Output/Flag Spoiler </summary>
-  Part 10.png
-</details>
+**THE FLAG IS SHOWN IN THE BELOW IMAGE, PROCEED IF YOU WISH**
+
+![Part 10](https://user-images.githubusercontent.com/30860555/144775892-e3d9d57f-f620-4a7a-b69b-d2c9431317d0.png)
 
 <details>
   <summary> Flag Spoilers</summary>
