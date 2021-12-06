@@ -14,7 +14,7 @@
 
 Upon opening the provided PCAP file, using context clues from the title, we right clicked on the first TCP packet and went `Follow > TCP Stream` as shown below.
 
-![Part 1](https://user-images.githubusercontent.com/30860555/144775833-71c6a18d-b2bb-4689-8a96-fed9411f3423.png)
+![Part 1](https://user-images.githubusercontent.com/30860555/144777340-da5bc4ff-1681-4cd3-a8f8-2daee3365561.png)
 
 After doing so, we find the encrypted PGP message below:
 
@@ -38,15 +38,18 @@ Unfortunately, this private PGP key can't be used on its own. It is password pro
 
 Heading back into Wireshark, I incremented the TCP stream one more time to `2`, right-clicked on the first packet, and followed a new TCP stream again. This time, I found a telnet session, though it is hard to read as is.
 
-![Part 5](https://user-images.githubusercontent.com/30860555/144775868-2648ce49-c91c-4cb1-abba-775cd21447c1.png)
+![Part 5](https://user-images.githubusercontent.com/30860555/144777263-392039d0-6c4c-40a6-bb7d-f3ec4b75be0c.png)
 
 In order to make above more readable, at the bottom of the window, I switched from the `Entire Conversation` to `10.0.2.6:23 -> 10.0.2.9:59704 (1213 bytes)` to read the blue text alone.
 
 ![Part 6](https://user-images.githubusercontent.com/30860555/144775870-ef855e5f-ae66-4d61-ae69-4424fb61f3a5.png)
+![Part 6 Amended](https://user-images.githubusercontent.com/30860555/144777142-79e81fa7-907e-4372-9044-5c1d37949c8c.png)
 
-When examined closer, we can see the command that was used to create the private PGP key. In the command, we see the passphrase `farnha`. This is all the information we need to crack the PGP message!
+When examined closer, we can see the command that was used to create the private PGP key.
 
-![Part 7](https://user-images.githubusercontent.com/30860555/144775875-8b7a3d3e-4ce0-4d3c-a3fe-67fb53aa7db7.png)
+![Part 7](https://user-images.githubusercontent.com/30860555/144777194-fdfeaaa9-2307-4910-945f-3b784fa6935f.png)
+
+In the command, we see the passphrase `farnha`. This is all the information we need to crack the PGP message!
 
 ## Step 4 - Cracking the PGP Message
 
