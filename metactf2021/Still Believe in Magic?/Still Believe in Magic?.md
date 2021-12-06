@@ -3,7 +3,7 @@
 ### Description: 
 >We found [an archive with a file in it](https://metaproblems.com/f03e38955de03e3d860d32dfd20b132f/magic.tar.gz), but there was no file extension so we're not sure what it is. Can you figure out what kind of file it is and then open it?
 ### Included Files:
->[magic.tar.gz](https://github.com/zylideum/writeups/blob/main/metactf2021/Still%20Believe%20in%20Magic%3F/magic.tar.gz)
+>[magic.tar.gz](https://github.com/team23ctf/writeups/blob/main/metactf2021/Still%20Believe%20in%20Magic%3F/magic.tar.gz)
 
 ### Step 1 - File Reconnaissance:
 First, use `gunzip` and `tar -xvf` to unzip and unpack the file like you normally would.
