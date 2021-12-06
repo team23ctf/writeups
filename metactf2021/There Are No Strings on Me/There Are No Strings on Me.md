@@ -3,7 +3,7 @@
 ### Description: 
 >We've got this program that's supposed to check a password, and we're not quite sure how it works. Could you take a look at it and see about finding the password it's looking for?
 ### Provided Files:
->[download](https://github.com/zylideum/writeups/blob/main/metactf2021/There%20Are%20No%20Strings%20on%20Me/strings)
+>[download](https://github.com/team23ctf/writeups/blob/main/metactf2021/There%20Are%20No%20Strings%20on%20Me/strings)
 
 ### Step 1 - Identify File:
 When downloading CTF files, there are a couple of things that should be done. First, `file` should be ran to determine what kind of file it is.
