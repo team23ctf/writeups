@@ -3,7 +3,7 @@
 ### Description: 
 >FTP servers are made to share files, but if its communications are not encrypted, it might be sharing passwords as well. The password in [this pcap](https://metaproblems.com/2dd6443361555f266a8c2f54c50d01e9/ftp_challenge.pcapng) to get the flag
 ### Included Files:
->[ftp_challenge.pcapng](https://github.com/zylideum/writeups/blob/main/metactf2021/Sharing%20Files%20and%20Passwords/ftp_challenge.pcapng)
+>[ftp_challenge.pcapng](https://github.com/team23ctf/writeups/blob/main/metactf2021/Sharing%20Files%20and%20Passwords/ftp_challenge.pcapng)
 
 
 ### Step 1 - Explore Pcap Data:
