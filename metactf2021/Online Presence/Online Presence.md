@@ -55,13 +55,20 @@ for submission in submissions:
     cusernames1.append(comment.author)
     print("ID: " + comment.id + ";     " + str(comment.author) + ":   " + comment.body)
   print("\n")
+```
 
+The code block above was then repurposed for each subreddit we wanted to search, changing out the `cusernames1` variable with a new one to separate our lists of posters.
+After running it on a few different subreddits, we could determine who were the common posters between two subreddits using the following codeblock.
 
+```
 cu1set = set(cusernames1)
 set(cuset2).intersection(cu1set)
-  
 ```
+
 This is basically all of the code required, we just need to try different combinations of subreddits and find the users that are posting comments in each one. Store the users in different arrays and intersect those sets to filter it down.
+
+See the entire script that was ran over on (Google Colab)[https://colab.research.google.com/drive/1IhywVzP5E_ifFLWg_WkgkmqhrKD-LyVp?usp=sharing].
+
 
 ### Step 4 - Some Hits!
 When we were filtering between /r/bodybuilding, /r/fitness, and other health-related subreddits, there were tons of users in the list to go through. Who would've thought people who comment in one subreddit comment in another related one?
@@ -93,3 +100,5 @@ Therefore our flag is
 
 ## Learning Takeaways
 We learned how to use the Reddit PRAW API for crawling comments and subreddits, and how to filter that data. Correlative logic skills were improved when thinking about where he would be posting.
+
+
