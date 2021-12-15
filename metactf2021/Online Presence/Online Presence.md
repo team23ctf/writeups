@@ -67,7 +67,7 @@ set(cuset2).intersection(cu1set)
 
 This is basically all of the code required, we just need to try different combinations of subreddits and find the users that are posting comments in each one. Store the users in different arrays and intersect those sets to filter it down.
 
-See the entire script that was ran over on (Google Colab)[https://colab.research.google.com/drive/1IhywVzP5E_ifFLWg_WkgkmqhrKD-LyVp?usp=sharing].
+See the entire script that was ran (with comments along the way!) over on [Google Colab](https://colab.research.google.com/drive/1IhywVzP5E_ifFLWg_WkgkmqhrKD-LyVp?usp=sharing).
 
 
 ### Step 4 - Some Hits!
